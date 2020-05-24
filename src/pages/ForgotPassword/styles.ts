@@ -8,11 +8,7 @@ export const Container = styled.div`
   display: flex;
   align-items: stretch;
 `
-export const Background = styled.div`
-  flex: 1;
-  background: url(${signInBackgroundImg}) no-repeat center;
-  background-size: cover;
-`
+
 export const Content = styled.div`
   display: flex;
   flex-direction: column;
@@ -70,4 +66,9 @@ export const AnimationContainer = styled.div`
       margin-right: 16px;
     }
   }
+`
+export const Background = styled.div`
+  flex: 1;
+  background: url(${signInBackgroundImg}) no-repeat center;
+  background-size: cover;
 `
