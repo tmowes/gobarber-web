@@ -20,10 +20,8 @@ interface ForgotPasswordFormData {
 
 const ForgotPassword: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(false)
-
   const formRef = useRef<FormHandles>(null)
   const { addToast } = useToast()
-  // const history = useHistory()
 
   const handleSubmit = useCallback(
     async (data: ForgotPasswordFormData) => {

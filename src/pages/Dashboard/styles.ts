@@ -35,6 +35,7 @@ export const Profile = styled.div`
     width: 64px;
     height: 64px;
     border-radius: 50%;
+    object-fit: cover;
   }
   div {
     display: flex;
@@ -121,6 +122,7 @@ export const NextAppointment = styled.div`
       width: 80px;
       height: 80px;
       border-radius: 50%;
+      object-fit: cover;
     }
     strong {
       margin-left: 24px;
@@ -182,6 +184,7 @@ export const Appointment = styled.div`
       width: 64px;
       height: 64px;
       border-radius: 50%;
+      object-fit: cover;
     }
     strong {
       margin-left: 24px;
