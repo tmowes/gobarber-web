@@ -38,7 +38,6 @@ export const Container = styled.div<ContainerProps>`
     css`
       color: #ff9000;
     `}
-
   input {
     color: #f4ede8;
     flex: 1;
@@ -53,8 +52,8 @@ export const Container = styled.div<ContainerProps>`
     &:-webkit-autofill:hover,
     &:-webkit-autofill:focus,
     &:-webkit-autofill:active {
-      -webkit-transition: color 9999s ease-out, background-color 9999s ease-out;
-      -webkit-transition-delay: 9999s;
+      /* -webkit-transition: color 9999s ease-out, background-color 9999s ease-out; */
+      /* -webkit-transition-delay: 9999s; */
     }
   }
   svg {

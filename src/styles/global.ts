@@ -16,6 +16,7 @@ export default createGlobalStyle`
 
   body, input, button{
     font-family: 'Roboto slab', serif;
+    text-rendering: optimizeLegibility;
     font-size: 16px;
   }
 
