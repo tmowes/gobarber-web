@@ -6,6 +6,9 @@ import signInBackgroundImg from '../../assets/sign-in-background.png'
 export const Container = styled.div``
 export const Header = styled.header`
   padding: 32px 0;
+  @media (max-width: 930px) {
+    padding: 16px 0;
+  }
   background: #28262e;
 `
 export const HeaderContent = styled.div`
@@ -13,11 +16,21 @@ export const HeaderContent = styled.div`
   margin: 0 auto;
   display: flex;
   align-items: center;
+  @media (max-width: 930px) {
+    max-width: 768px;
+  }
   > img {
     height: 80px;
+    @media (max-width: 930px) {
+      margin-left: 32px;
+      height: 64px;
+    }
   }
   button {
     margin-left: auto;
+    @media (max-width: 930px) {
+      margin-right: 32px;
+    }
     background: transparent;
     border: 0;
   }
@@ -31,6 +44,10 @@ export const Profile = styled.div`
   display: flex;
   align-items: center;
   margin-left: 80px;
+  @media (max-width: 928px) {
+    margin-left: 16px;
+    max-width: 444px;
+  }
   img {
     width: 64px;
     height: 64px;
@@ -65,13 +82,21 @@ export const Content = styled.main`
   max-width: 930px;
   margin: 64px auto;
   flex-direction: row;
+  @media (max-width: 930px) {
+    flex-direction: column;
+    max-width: 444px;
+    margin: 8px auto;
+  }
   align-items: center;
   justify-content: center;
   width: 100%;
 `
 export const Schedule = styled.div`
   flex: 1;
-  margin-right: 120px;
+  margin-right: 0;
+  @media (max-width: 768px) {
+    margin: 0;
+  }
   h1 {
     font-size: 36px;
   }
@@ -191,56 +216,9 @@ export const Appointment = styled.div`
       font-size: 20px;
     }
   }
-
-  /* margin-top: 64px;
-  > strong {
-    color: #999591;
-    font-size: 20px;
-    font-weight: 400;
-  }
-  div {
-    display: flex;
-    position: relative;
-    align-items: center;
-    padding: 16px 24px;
-    border-radius: 10px;
-    margin-top: 24px;
-    background: #3e3b47;
-    &::before {
-      position: absolute;
-      height: 80%;
-      width: 2px;
-      left: 0;
-      top: 10%;
-      content: '';
-      background: #ff9000;
-    }
-    img {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-    }
-    strong {
-      margin-left: 24px;
-    }
-    span {
-      display: flex;
-      align-items: center;
-      margin-left: auto;
-      color: #999591;
-      svg {
-        color: #ff9000;
-        margin-right: 8px;
-      }
-    }
-  } */
 `
 
 export const Calendar = styled.aside`
-  /* display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; */
   width: 380px;
   .DayPicker {
     background: #28262e;

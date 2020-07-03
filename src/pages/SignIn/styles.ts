@@ -35,16 +35,19 @@ export const AnimationContainer = styled.div`
   justify-content: center;
   animation: ${appearFromLeft} 1s;
   form {
-    margin: 80px 0;
-    width: 340px;
+    margin: 48px 0;
+    @media (max-width: 930px) {
+      margin: 16px 0;
+    }
+    width: 320px;
     text-align: center;
     h1 {
-      margin-bottom: 24px;
+      margin-bottom: 16px;
     }
     a {
       color: #f4ede8;
       display: block;
-      margin-top: 24px;
+      margin-top: 16px;
       text-decoration: none;
       transition: color 0.2s;
       &:hover {
@@ -56,7 +59,7 @@ export const AnimationContainer = styled.div`
     color: #ff9000;
     display: flex;
     align-items: center;
-    margin-top: 24px;
+    margin-top: 16px;
     text-decoration: none;
     transition: color 0.2s;
     &:hover {
