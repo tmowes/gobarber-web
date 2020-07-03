@@ -4,6 +4,7 @@ import { shade } from 'polished'
 import signInBackgroundImg from '../../assets/sign-in-background.png'
 
 export const Container = styled.div``
+
 export const Header = styled.header`
   padding: 32px 0;
   @media (max-width: 930px) {
@@ -22,16 +23,17 @@ export const HeaderContent = styled.div`
   > img {
     height: 80px;
     @media (max-width: 930px) {
-      margin-left: 32px;
-      height: 64px;
+      margin-left: 8px;
+      height: 48px;
     }
   }
   button {
     margin-left: auto;
     @media (max-width: 930px) {
-      margin-right: 32px;
+      margin-right: 16px;
     }
     background: transparent;
+    padding: 8px;
     border: 0;
   }
   svg {
@@ -51,6 +53,10 @@ export const Profile = styled.div`
   img {
     width: 64px;
     height: 64px;
+    @media (max-width: 928px) {
+      width: 48px;
+      height: 48px;
+    }
     border-radius: 50%;
     object-fit: cover;
   }
@@ -85,7 +91,7 @@ export const Content = styled.main`
   @media (max-width: 930px) {
     flex-direction: column;
     max-width: 444px;
-    margin: 8px auto;
+    margin: 8px 0;
   }
   align-items: center;
   justify-content: center;
@@ -93,9 +99,9 @@ export const Content = styled.main`
 `
 export const Schedule = styled.div`
   flex: 1;
-  margin-right: 0;
+  margin: 16px;
   @media (max-width: 768px) {
-    margin: 0;
+    margin: 0 12px;
   }
   h1 {
     font-size: 36px;
@@ -179,7 +185,6 @@ export const Section = styled.section`
     color: #999591;
   }
 `
-
 export const Appointment = styled.div`
   display: flex;
   align-items: center;
@@ -220,9 +225,13 @@ export const Appointment = styled.div`
 
 export const Calendar = styled.aside`
   width: 380px;
+  @media (max-width: 768px) {
+    width: 304px;
+    margin: 32px 0;
+  }
   .DayPicker {
     background: #28262e;
-    border-radius: 10px;
+    border-radius: 8px;
   }
 
   .DayPicker-wrapper {
@@ -243,11 +252,15 @@ export const Calendar = styled.aside`
   .DayPicker-Day {
     width: 40px;
     height: 40px;
+    @media (max-width: 768px) {
+      width: 32px;
+      height: 32px;
+    }
   }
 
   .DayPicker-Day--available:not(.DayPicker-Day--outside) {
     background: #3e3b47;
-    border-radius: 10px;
+    border-radius: 8px;
     color: #fff;
   }
 
@@ -267,7 +280,7 @@ export const Calendar = styled.aside`
 
   .DayPicker-Day--selected {
     background: #ff9000 !important;
-    border-radius: 10px;
+    border-radius: 8px;
     color: #232129 !important;
   }
 `
@@ -292,6 +305,7 @@ export const AnimationContainer = styled.div`
   form {
     margin: 80px 0;
     width: 380px;
+
     text-align: center;
     h1 {
       margin-bottom: 24px;

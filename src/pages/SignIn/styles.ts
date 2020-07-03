@@ -8,14 +8,16 @@ export const Container = styled.div`
   display: flex;
   align-items: stretch;
 `
-
 export const Content = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
-  max-width: 700px;
+  max-width: 320px;
+  @media (max-width: 930px) {
+    width: 320px;
+  }
 `
 const appearFromLeft = keyframes`
   from {
@@ -27,7 +29,6 @@ const appearFromLeft = keyframes`
     transform: translateX(0px)
   }
 `
-
 export const AnimationContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -36,22 +37,34 @@ export const AnimationContainer = styled.div`
   animation: ${appearFromLeft} 1s;
   form {
     margin: 48px 0;
+    width: 288px;
     @media (max-width: 930px) {
       margin: 16px 0;
     }
-    width: 320px;
     text-align: center;
     h1 {
-      margin-bottom: 16px;
+      font-size: 24px;
+      margin-bottom: 24px;
+      @media (max-width: 930px) {
+        margin-bottom: 8px;
+      }
     }
     a {
       color: #f4ede8;
       display: block;
-      margin-top: 16px;
+      margin-top: 24px;
+      @media (max-width: 930px) {
+        margin-top: 8px;
+      }
       text-decoration: none;
       transition: color 0.2s;
       &:hover {
         color: ${shade(0.2, '#f4ede8')};
+      }
+    }
+    > img {
+      @media (max-width: 930px) {
+        height: 128px;
       }
     }
   }
@@ -59,7 +72,11 @@ export const AnimationContainer = styled.div`
     color: #ff9000;
     display: flex;
     align-items: center;
-    margin-top: 16px;
+    margin-top: 24px;
+    @media (max-width: 930px) {
+      margin-top: 8px;
+    }
+
     text-decoration: none;
     transition: color 0.2s;
     &:hover {

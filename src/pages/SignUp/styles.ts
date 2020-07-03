@@ -18,8 +18,11 @@ export const Content = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  max-width: 320px;
   width: 100%;
-  max-width: 700px;
+  @media (max-width: 930px) {
+    width: 320px;
+  }
 `
 const appearFromRight = keyframes`
   from {
@@ -40,15 +43,20 @@ export const AnimationContainer = styled.div`
   animation: ${appearFromRight} 1s;
   form {
     margin: 80px 0;
-    width: 340px;
+    width: 288px;
     text-align: center;
+    @media (max-width: 930px) {
+      margin: 16px 0;
+      width: 288px;
+    }
     h1 {
-      margin-bottom: 24px;
+      font-size: 24px;
+      margin-bottom: 16px;
     }
     a {
       color: #f4ede8;
       display: block;
-      margin-top: 24px;
+      margin-top: 16px;
       text-decoration: none;
       transition: color 0.2s;
       &:hover {
@@ -56,11 +64,17 @@ export const AnimationContainer = styled.div`
       }
     }
   }
+  > img {
+    @media (max-width: 930px) {
+      margin-left: 8px;
+      height: 128px;
+    }
+  }
   > a {
     color: #f4ede8;
     display: flex;
     align-items: center;
-    margin-top: 24px;
+    margin-top: 16px;
     text-decoration: none;
     transition: color 0.2s;
     &:hover {
@@ -71,34 +85,3 @@ export const AnimationContainer = styled.div`
     }
   }
 `
-
-// export const Content = styled.div`
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   justify-content: center;
-//   width: 100%;
-//   max-width: 700px;
-//   form {
-//     margin: 80px 0;
-//     width: 340px;
-//     text-align: center;
-//     h1 {
-//       margin-bottom: 24px;
-//     }
-//   }
-//   > a {
-//     color: #f4ede8;
-//     display: flex;
-//     align-items: center;
-//     margin-top: 24px;
-//     text-decoration: none;
-//     transition: color 0.2s;
-//     &:hover {
-//       color: ${shade(0.2, '#f4ede8')};
-//     }
-//     svg {
-//       margin-right: 16px;
-//     }
-//   }
-// `
