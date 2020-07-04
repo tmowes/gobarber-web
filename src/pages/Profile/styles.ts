@@ -5,20 +5,26 @@ import { shade } from 'polished'
 export const Container = styled.div`
   height: 100vh;
   > header {
-    height: 144px;
+    max-width: 930px;
+    width: 100%;
+    height: 128px;
     background: #28262e;
     display: flex;
-    /* flex-direction: column; */
     align-items: center;
-    /* justify-content: center; */
-    div {
-      max-width: 930px;
+    margin: 0 auto;
+    z-index: 2;
+    @media (max-width: 930px) {
+      height: 96px;
       width: 100%;
-      margin: 0 auto;
+    }
+    div {
+      padding: 16px;
+      z-index: 9999;
       svg {
+        background: #28262e;
+        color: #999591;
         width: 24px;
         height: 24px;
-        color: #999591;
       }
     }
   }
@@ -28,41 +34,31 @@ export const Content = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: -96px auto 0;
+  margin: -80px auto 0;
   width: 100%;
   form {
-    /* margin: 80px 0; */
-    /* flex: 1; */
     display: flex;
     flex-direction: column;
-    width: 340px;
     text-align: center;
-
+    width: 340px;
     h1 {
-      margin-bottom: 24px;
       font-size: 20px;
       text-align: left;
-    }
-    a {
-      color: #f4ede8;
-      display: block;
-      margin-top: 24px;
-      text-decoration: none;
-      transition: color 0.2s;
-      &:hover {
-        color: ${shade(0.2, '#f4ede8')};
+      margin-bottom: 24px;
+      @media (max-width: 930px) {
+        margin-bottom: 8px;
       }
-    }
-    input[name='old_password'] {
-      margin-top: 24px;
     }
   }
   > a {
     color: #f4ede8;
     display: flex;
     align-items: center;
-    margin-top: 24px;
     text-decoration: none;
+    margin-top: 24px;
+    @media (max-width: 930px) {
+      margin-top: 0;
+    }
     transition: color 0.2s;
     &:hover {
       color: ${shade(0.2, '#f4ede8')};
@@ -74,13 +70,21 @@ export const Content = styled.div`
 `
 export const AvatarInput = styled.div`
   position: relative;
-  margin-bottom: 32px;
   align-self: center;
+  z-index: 999;
+  margin-bottom: 32px;
+  @media (max-width: 930px) {
+    margin-bottom: 0;
+  }
   img {
     width: 192px;
     height: 192px;
     border-radius: 50%;
     object-fit: cover;
+    @media (max-width: 930px) {
+      width: 128px;
+      height: 128px;
+    }
   }
   label {
     position: absolute;
@@ -110,52 +114,19 @@ export const AvatarInput = styled.div`
   }
 `
 
-// const appearFromRight = keyframes`
-//   from {
-//     opacity:0;
-//     transform: translateY(100px)
-//   }
-//   to{
-//     opacity:1;
-//     transform: translateY(0px)
-//   }
-// `
-// export const AnimationContainer = styled.div`
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   justify-content: center;
-//   animation: ${appearFromRight} 1s;
-//   form {
-//     margin: 80px 0;
-//     width: 340px;
-//     text-align: center;
-//     h1 {
-//       margin-bottom: 24px;
-//     }
-//     a {
-//       color: #f4ede8;
-//       display: block;
-//       margin-top: 24px;
-//       text-decoration: none;
-//       transition: color 0.2s;
-//       &:hover {
-//         color: ${shade(0.2, '#f4ede8')};
-//       }
-//     }
-//   }
-//   > a {
-//     color: #f4ede8;
-//     display: flex;
-//     align-items: center;
-//     margin-top: 24px;
-//     text-decoration: none;
-//     transition: color 0.2s;
-//     &:hover {
-//       color: ${shade(0.2, '#f4ede8')};
-//     }
-//     svg {
-//       margin-right: 16px;
-//     }
-//   }
-// `
+const appearFromBotton = keyframes`
+  from {
+    opacity:0;
+    transform: translateY(100px)
+  }
+  to{
+    opacity:1;
+    transform: translateY(0px)
+  }
+`
+export const AnimationContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  z-index: 15;
+  animation: ${appearFromBotton} 1s;
+`

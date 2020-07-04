@@ -13,7 +13,7 @@ import getValidationErrors from '../../utils/getValidationErrors'
 import Input from '../../components/Input'
 import Button from '../../components/Button'
 
-import { Container, Content, AvatarInput } from './styles'
+import { Container, Content, AvatarInput, AnimationContainer } from './styles'
 import { useAuth } from '../../hooks/auth'
 
 interface ProfileFormData {
@@ -125,51 +125,56 @@ const Profile: React.FC = () => {
         <header>
           <div>
             <Link to="/dashboard">
-              <FiArrowLeft size={20} />
+              <FiArrowLeft />
             </Link>
           </div>
         </header>
         <Content>
-          {/* <AnimationContainer> */}
-          <Form
-            ref={formRef}
-            initialData={{
-              name: user.name,
-              email: user.email,
-            }}
-            onSubmit={handleSubmit}
-          >
-            <AvatarInput>
-              <img src={user.avatar_url} alt={user.name} />
-              <label htmlFor="avatar">
-                <FiCamera />
-                <input type="file" id="avatar" onChange={handleAvatarChange} />
-              </label>
-            </AvatarInput>
-            <h1>Meu Perfil</h1>
-            <Input name="name" icon={FiUser} placeholder="Nome" />
-            <Input name="email" icon={FiMail} placeholder="E-mail" />
-            <Input
-              containerStyle={{ marginTop: 24 }}
-              name="old_password"
-              icon={FiLock}
-              type="password"
-              placeholder="Senha atual"
-            />
-            <Input
-              name="password"
-              icon={FiLock}
-              type="password"
-              placeholder="Nova senha"
-            />
-            <Input
-              name="password_confirmation"
-              icon={FiLock}
-              type="password"
-              placeholder="Confirmar senha"
-            />
-            <Button type="submit">Confirmar alterações</Button>
-          </Form>
+          <AnimationContainer>
+            <Form
+              ref={formRef}
+              initialData={{
+                name: user.name,
+                email: user.email,
+              }}
+              onSubmit={handleSubmit}
+            >
+              <AvatarInput>
+                <img src={user.avatar_url} alt={user.name} />
+                <label htmlFor="avatar">
+                  <FiCamera />
+                  <input
+                    type="file"
+                    id="avatar"
+                    onChange={handleAvatarChange}
+                  />
+                </label>
+              </AvatarInput>
+              <h1>Meu Perfil</h1>
+              <Input name="name" icon={FiUser} placeholder="Nome" />
+              <Input name="email" icon={FiMail} placeholder="E-mail" />
+              <Input
+                containerStyle={{ marginTop: 16 }}
+                name="old_password"
+                icon={FiLock}
+                type="password"
+                placeholder="Senha atual"
+              />
+              <Input
+                name="password"
+                icon={FiLock}
+                type="password"
+                placeholder="Nova senha"
+              />
+              <Input
+                name="password_confirmation"
+                icon={FiLock}
+                type="password"
+                placeholder="Confirmar senha"
+              />
+              <Button type="submit">Confirmar alterações</Button>
+            </Form>
+          </AnimationContainer>
         </Content>
       </Container>
     </>
