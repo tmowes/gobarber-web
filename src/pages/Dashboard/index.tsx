@@ -18,7 +18,6 @@ import {
   NextAppointment,
   Calendar,
   AnimationContainer,
-  Background,
   Header,
   HeaderContent,
   Profile,
@@ -48,7 +47,6 @@ const Dashboard: React.FC = () => {
   const [monthAvailability, setMonthAvailability] = useState<
     MonthAvailabilityItem[]
   >([])
-
   const [appointments, setAppointments] = useState<AppointmentItem[]>([])
 
   const handleDayChange = useCallback((day: Date, modifiers: DayModifiers) => {
@@ -56,11 +54,9 @@ const Dashboard: React.FC = () => {
       setSelectedDate(day)
     }
   }, [])
-
   const handleMonthChange = useCallback((month: Date) => {
     setCurrentMonth(month)
   }, [])
-
   const disabledDays = useMemo(() => {
     const dates = monthAvailability
       .filter(monthDay => monthDay.available === false)
@@ -124,7 +120,7 @@ const Dashboard: React.FC = () => {
 
   useEffect(() => {
     async function loadAppointments(): Promise<void> {
-      const response = await api.get<AppointmentItem[]>(
+      const { data } = await api.get<AppointmentItem[]>(
         '/appointments/schedule',
         {
           params: {
@@ -134,10 +130,15 @@ const Dashboard: React.FC = () => {
           },
         },
       )
-      const formattedAppointments = response.data.map(appointment => {
+      const formattedAppointments = data.map(appointment => {
+        const localHour = parseISO(appointment.date).getUTCHours()
+        const formattedHour = format(
+          parseISO(appointment.date).setHours(localHour),
+          'HH:mm',
+        )
         return {
           ...appointment,
-          formattedHour: format(parseISO(appointment.date), 'HH:mm'),
+          formattedHour,
         }
       })
       setAppointments(formattedAppointments)
@@ -260,7 +261,6 @@ const Dashboard: React.FC = () => {
             </Calendar>
           </AnimationContainer>
         </Content>
-        <Background />
       </Container>
     </>
   )

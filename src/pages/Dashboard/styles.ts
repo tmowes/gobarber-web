@@ -1,8 +1,6 @@
 import styled, { keyframes } from 'styled-components'
 import { shade } from 'polished'
 
-import signInBackgroundImg from '../../assets/sign-in-background.png'
-
 export const Container = styled.div`
   @media (max-width: 930px) {
     display: flex;
@@ -10,7 +8,6 @@ export const Container = styled.div`
     align-items: center;
   }
 `
-
 export const Header = styled.header`
   padding: 32px 48px;
   width: 100%;
@@ -29,6 +26,7 @@ export const HeaderContent = styled.div`
   justify-content: center;
   > img {
     height: 80px;
+    margin: 0 16px;
     @media (max-width: 930px) {
       margin: 0 8px;
       height: 48px;
@@ -62,8 +60,8 @@ export const Profile = styled.div`
     max-width: 444px;
   }
   img {
-    width: 64px;
-    height: 64px;
+    width: 80px;
+    height: 80px;
     @media (max-width: 930px) {
       width: 48px;
       height: 48px;
@@ -88,12 +86,6 @@ export const Profile = styled.div`
     }
   }
 `
-
-export const Background = styled.div`
-  flex: 1;
-  background: url(${signInBackgroundImg}) no-repeat center;
-  background-size: cover;
-`
 export const Content = styled.main`
   display: flex;
   max-width: 930px;
@@ -105,6 +97,9 @@ export const Content = styled.main`
     max-width: 444px;
     margin: 8px 0;
   }
+  @media (max-width: 425px) {
+    margin: 16px 0;
+  }
   align-items: center;
   justify-content: center;
   width: 100%;
@@ -113,7 +108,19 @@ export const Schedule = styled.div`
   flex: 1;
   margin: 16px;
   @media (max-width: 930px) {
-    margin: 0 12px;
+    max-width: 380px;
+    margin: 0;
+    width: 100%;
+  }
+  @media (max-width: 425px) {
+    max-width: 351px;
+    margin: 8px;
+    width: 100%;
+  }
+  @media (max-width: 320px) {
+    max-width: 304px;
+    margin: 8px;
+    width: 100%;
   }
   h1 {
     font-size: 36px;
@@ -184,6 +191,13 @@ export const NextAppointment = styled.div`
 `
 export const Section = styled.section`
   margin-top: 48px;
+  margin-right: 48px;
+  @media (max-width: 930px) {
+    margin: 32px 0;
+  }
+  @media (max-width: 425px) {
+    margin: 48px 0;
+  }
   > strong {
     display: block;
     color: #999591;
@@ -234,7 +248,6 @@ export const Appointment = styled.div`
     }
   }
 `
-
 const appearFromRight = keyframes`
   from {
     opacity:0;
@@ -268,14 +281,17 @@ export const AnimationContainer = styled.div`
 export const Calendar = styled.aside`
   max-width: 380px;
   width: 115%;
+  margin: 0 32px;
   @media (max-width: 930px) {
-    margin: 32px 0;
+    margin: 8px 32px;
   }
-  @media (max-width: 424px) {
-    width: 115%;
+  @media (max-width: 425px) {
+    margin: 0 8px;
+    max-width: 351px;
   }
   @media (max-width: 320px) {
-    width: 100%;
+    margin: 0 8px;
+    max-width: 304px;
   }
   .DayPicker {
     background: #28262e;
@@ -296,8 +312,12 @@ export const Calendar = styled.aside`
   .DayPicker-Day {
     width: 40px;
     height: 40px;
-    @media (max-width: 424px) {
-      width: 32px;
+    @media (max-width: 425px) {
+      /* width: 32px; */
+      height: 32px;
+    }
+    @media (max-width: 320px) {
+      /* width: 37px; */
       height: 32px;
     }
   }
